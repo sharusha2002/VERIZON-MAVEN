@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+       "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<!-- Define your beans here -->
+<beans>
+	<bean class="com.verizon.springstarter.Engineer" id="theEngineer">
+		<!-- setter di -->
+		<!-- <property name="name" value="sharusha"></property> <property name="skills" 
+			value="html, css, javascript"></property> -->
+		<constructor-arg index="0" type="java.lang.String"
+			value="Sharusha"></constructor-arg>
+		<constructor-arg index="1" type="java.lang.String"
+			value="html, css, js"></constructor-arg>
+	</bean>
+
+
+
+	<bean class="com.verizon.springstarter.Doctor" id="theDoctor">
+		<constructor-arg index="0" type="java.lang.String"
+			value="Dhanush"></constructor-arg>
+		<constructor-arg index="1" type="java.lang.Integer"
+			value="20012"></constructor-arg>
+		<constructor-arg index="2" type="java.lang.String"
+			value="Dermatologist"></constructor-arg>
+		<!-- <constructor-arg ref="theAddress"></constructor-arg> -->
+
+
+
+
+		<constructor-arg>
+			<list>
+				<ref bean="theAddress"></ref>
+				<ref bean="theOtherAddress"></ref>
+				<ref bean="thirdAddress"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean class="com.verizon.springstarter.Address" id="theAddress">
+		<constructor-arg value="Chennai"></constructor-arg>
+		<constructor-arg value="600118"></constructor-arg>
+	</bean>
+	<bean class="com.verizon.springstarter.Address"
+		id="theOtherAddress">
+		<constructor-arg value="Mumbai"></constructor-arg>
+		<constructor-arg value="500118"></constructor-arg>
+	</bean>
+	<bean class="com.verizon.springstarter.Address" id="thirdAddress">
+		<constructor-arg value="Bangalore"></constructor-arg>
+		<constructor-arg value="23300"></constructor-arg>
+	</bean>
+
+	<bean class="com.verizon.springstarter.CivilEngineer" autowire="byType"
+		id="civilEngineer">
+		<!-- <constructor-arg ref="theAddress"></constructor-arg> -->
+	</bean>
+
+</beans>
+       

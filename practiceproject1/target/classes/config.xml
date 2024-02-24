@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+       "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean class="com.verizon.practiceproject1.ComputerEngineer"
+		scope="prototype" autowire="byType" id="computerEngineer">
+		<property name="id" value="200"></property>
+		<property name="name" value="sharusha"></property>
+		<property name="skills" value="html, css, js"></property>
+	</bean>
+
+	<bean class="com.verizon.practiceproject1.ComputerEngineer"
+		scope="prototype" autowire="byType" id="computersEngineers">
+		<property name="id" value="2001"></property>
+		<property name="name" value="kjhkh"></property>
+		<property name="skills" value="html, css, js"></property>
+	</bean>
+	<bean class="com.verizon.practiceproject1.CivilEngineer"
+		autowire="byName" scope="prototype" id="civilEngineer">
+
+	</bean>
+	<bean class="com.verizon.practiceproject1.Address" id="address"
+		scope="prototype">
+		<constructor-arg value="Chennai"></constructor-arg>
+		<constructor-arg value="600118"></constructor-arg>
+	</bean>
+	<bean class="com.verizon.practiceproject1.Address" id="address2"
+		scope="prototype">
+		<constructor-arg value="Coimbatore"></constructor-arg>
+		<constructor-arg value="600128"></constructor-arg>
+	</bean>
+
+
+</beans>
